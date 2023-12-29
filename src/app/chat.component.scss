@@ -1,0 +1,114 @@
+:host {
+  display: flex;
+  align-items: stretch;
+  width: 100%;
+  height: calc(100% - 66px);
+
+  .chat-container {
+    display: flex;
+    width: 100%;
+    
+    margin-bottom: 16px;
+   
+  
+
+    .chat-header {
+      button { border-radius: 999px; padding: 4px 16px; }
+    }
+
+    .message {
+      display: flex;
+      flex-direction: column;
+      padding: 16px;
+      border-radius: 16px;
+      color: #2B3136;
+  
+      max-width: 80%;
+      min-width: 10%;
+  
+      p { 
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 24px; /* 150% */
+        letter-spacing: 0.5px;
+      }
+  
+      span {
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 24px; /* 150% */
+        letter-spacing: 0.15px;
+      }
+  
+      &.sended {
+        align-self: flex-end;
+        background-color: #B4E4EB;
+      }
+  
+      &.recived {
+        align-self: flex-start;
+        background-color: #DDE3EA;
+      }
+    }
+
+    .chat-textbar {
+      background-color: #fff;
+      position: absolute; bottom: 0;
+      display: inline-flex;
+      align-items: center;
+      padding: 16px;
+      gap: 16px;
+      width: calc(100% - 32px);
+      border-top: 1px solid rgba(0, 87, 121, 0.30);
+
+      input {
+        background-color: #eee;
+        border: none;
+        padding: 1rem;
+        font-size: 1rem;
+        border-radius: 999px;
+        width: 100%;
+
+        &:focus {
+          outline-color: rgba(0, 87, 121, 0.30);
+        }
+      }
+    }  
+  }
+}
+
+.chat-container {
+  display: flex;
+  width: calc(100% -32px);
+  height: calc(100% -32px);
+
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+
+  padding: 32px;
+  gap: 16px;
+
+  .chat-header {
+    button { border-radius: 999px; padding: 4px 16px; }
+  }
+
+  .chat-textbar {
+    display: inline-flex;
+    padding: 16px;
+    gap: 16px;
+    width: 100%;
+    border-top: 1px solid rgba(0, 87, 121, 0.30);
+  }
+}
+
+::ng-deep .ps-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 32px;
+  gap: 16px;
+}

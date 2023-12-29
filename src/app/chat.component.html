@@ -1,0 +1,42 @@
+<div class="chat-container">
+  <perfect-scrollbar #perfectScroll [scrollIndicators]="true">
+    <div class="chat-header">
+      <button mat-raised-button [color]="'primary'">
+        <mat-icon>sync</mat-icon>
+        <span>Carrgar Mensagens Anteriores</span>
+      </button>
+    </div>
+
+    <ng-container *ngFor="let message of messages">
+      <div class="message" [ngClass]="message.recived ? 'recived' : 'sended'">
+        <p>{{ message.text }}</p>
+        <span>{{ message.date | date : "short" }}</span>
+      </div>
+    </ng-container>
+  </perfect-scrollbar>
+
+  <div class="chat-textbar">
+    <button mat-icon-button>
+      <mat-icon>mood</mat-icon>
+    </button>
+
+    <input type="text" placeholder="Type here..." name="text" class="input" />
+
+    <button mat-icon-button [matMenuTriggerFor]="menu">
+      <mat-icon>more_vert</mat-icon>
+    </button>
+
+    <button mat-icon-button>
+      <mat-icon>send</mat-icon>
+    </button>
+
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item>
+        <mat-icon>quickreply</mat-icon>Respostas Pré-Definidas
+      </button>
+      <button mat-menu-item>
+        <mat-icon>add_circle</mat-icon>Nova Resposta Pré-Definida
+      </button>
+    </mat-menu>
+  </div>
+</div>
